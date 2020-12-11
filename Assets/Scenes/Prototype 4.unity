@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  hasPowerup: 0
 --- !u!1 &1211016355
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +753,7 @@ PrefabInstance:
     - target: {fileID: 3703863982631856862, guid: 17bac6ddc6e8e17478045b8ece72bb5e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3703863982631856862, guid: 17bac6ddc6e8e17478045b8ece72bb5e,
         type: 3}
