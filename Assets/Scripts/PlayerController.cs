@@ -24,12 +24,19 @@ public class PlayerController : MonoBehaviour
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
     }
 
+    IEnumerator PowerupCountdownRoutine()
+    {
+        yield return new WaitForSeconds(7);
+        hasPowerup = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Powerup"))
         {
             Destroy(other.gameObject);
             hasPowerup = true;
+            StartCoroutine(PowerupCountdownRoutine());
         }
     }
 
