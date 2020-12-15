@@ -5,12 +5,13 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public int enemyCount;
     private float spawnRange = 9.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemyWave(3);
+        
     }
 
     void SpawnEnemyWave(int enemiesToSpawn)
@@ -24,7 +25,12 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        enemyCount = FindObjectsOfType<Enemy>().Length;
+
+        if (enemyCount == 0)
+        {
+            SpawnEnemyWave(1);
+        }
     }
 
     private Vector3 GenerateSpawnPosition()
